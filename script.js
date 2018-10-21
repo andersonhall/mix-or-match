@@ -70,10 +70,11 @@ class MixOrMatch {
       this.ticker.innerText = this.totalClicks;
       card.classList.add('visible');
 
-      if(this.cardToCheck)
+      if(this.cardToCheck) {
         this.checkForCardMatch(card);
-      else
+      } else {
         this.cardToCheck = card;
+      }
     }
   }
   getCardType(card) {
@@ -92,7 +93,7 @@ class MixOrMatch {
     this.matchedCards.push(card2);
     card1.classList.add('matched');
     card2.classList.add('matched');
-    this.audioController.matchSound();
+    this.audioController.match();
     if(this.matchedCards.length === this.cardsArray.length)
       this.victory();
   }
